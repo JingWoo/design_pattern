@@ -52,8 +52,8 @@ private:
 class ConcreteObserver : public Observer {
 public:
     ConcreteObserver(Subject *subject, const std::string &name)
-            : m_subject(subject)
-            , m_name(name)
+        : m_subject(subject)
+        , m_name(name)
     {
     }
     virtual ~ConcreteObserver() = default;

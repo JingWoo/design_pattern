@@ -9,7 +9,7 @@ using namespace std;
 // ConcreteElementN=>place(zhejiang univerity)
 // ConcreteVisitorA => person(student)
 // ConcreteVisitorB => person(teacher)
-// ConcreteVisitorC => person(tourist) 
+// ConcreteVisitorC => person(tourist)
 
 class ConcreteElementN;
 class ConcreteElementM;
@@ -88,14 +88,17 @@ public:
 
 class ObjectStructure {
 public:
-    void Attach(Element *elem) {
+    void Attach(Element *elem)
+    {
         m_elements.push_back(elem);
     }
-    void Detach(Element *elem) {
+    void Detach(Element *elem)
+    {
         m_elements.remove(elem);
     }
 
-    void Accept(Visitor *visitor) {
+    void Accept(Visitor *visitor)
+    {
         for (auto itor = m_elements.begin(); itor != m_elements.end(); ++itor) {
             (*itor)->Accept(visitor);
         }

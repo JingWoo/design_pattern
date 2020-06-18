@@ -7,7 +7,8 @@ class Handler {
 public:
     Handler() = default;
     virtual ~Handler() = default;
-    void SetSuccessor(std::shared_ptr<Handler> successor) {
+    void SetSuccessor(std::shared_ptr<Handler> successor)
+    {
         this->m_successor = successor;
     }
 
@@ -22,7 +23,8 @@ public:
     ConcreteHandlerA() = default;
     virtual ~ConcreteHandlerA() = default;
 
-    void handle(int request) override {
+    void handle(int request) override
+    {
         if (request == 1) {
             std::cout << "ConcreteHandlerA" << std::endl;
         } else {
@@ -40,7 +42,8 @@ public:
     ConcreteHandlerB() = default;
     virtual ~ConcreteHandlerB() = default;
 
-    void handle(int request) override {
+    void handle(int request) override
+    {
         if (request == 2) {
             std::cout << "ConcreteHandlerB" << std::endl;
         } else {
@@ -53,11 +56,12 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     auto handlerA = std::make_shared<ConcreteHandlerA>();
     auto handlerB = std::make_shared<ConcreteHandlerB>();
     handlerA->SetSuccessor(handlerB);
-    
+
     handlerA->handle(0);
     handlerA->handle(1);
     handlerA->handle(2);

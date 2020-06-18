@@ -8,7 +8,7 @@ using namespace std;
 class Component {
 public:
     Component(const std::string &name)
-            : m_name(name)
+        : m_name(name)
     {
     }
     virtual ~Component() = default;
@@ -24,7 +24,7 @@ protected:
 class Leaf : public Component {
 public:
     Leaf(const std::string &name)
-            : Component(name)
+        : Component(name)
     {
     }
     void Add(Component *c) override
@@ -43,7 +43,7 @@ public:
 class Composite : public Component {
 public:
     Composite(const std::string &name)
-            : Component(name)
+        : Component(name)
     {
     }
     virtual ~Composite()

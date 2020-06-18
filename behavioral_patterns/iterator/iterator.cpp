@@ -25,7 +25,7 @@ public:
 class ConcreteIterator : public Iterator {
 public:
     ConcreteIterator(Aggregate *a)
-            : m_aggregate(a)
+        : m_aggregate(a)
     {
     }
 

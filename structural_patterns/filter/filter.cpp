@@ -7,9 +7,9 @@ using namespace std;
 class Person {
 public:
     Person(const std::string &name, const std::string &gender, const std::string &workNum)
-            : m_name(name)
-            , m_gender(gender)
-            , m_workNum(workNum)
+        : m_name(name)
+        , m_gender(gender)
+        , m_workNum(workNum)
     {
     }
     ~Person() = default;
@@ -45,7 +45,7 @@ public:
 class NameFilter : public Filter {
 public:
     NameFilter(const std::string &filter)
-            : m_filter(filter)
+        : m_filter(filter)
     {
     }
     virtual ~NameFilter() = default;
@@ -74,7 +74,7 @@ private:
 class GenderFilter : public Filter {
 public:
     GenderFilter(const std::string &filter)
-            : m_filter(filter)
+        : m_filter(filter)
     {
     }
     virtual ~GenderFilter() = default;
@@ -103,7 +103,7 @@ private:
 class WorkNumFilter : public Filter {
 public:
     WorkNumFilter(const std::string &filter)
-            : m_filter(filter)
+        : m_filter(filter)
     {
     }
     virtual ~WorkNumFilter() = default;
@@ -132,7 +132,7 @@ private:
 class ListFilter : public Filter {
 public:
     explicit ListFilter(std::list<std::shared_ptr<Filter>> filters)
-            : m_filters(filters)
+        : m_filters(filters)
     {
     }
     virtual ~ListFilter() = default;

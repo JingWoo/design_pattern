@@ -3,37 +3,39 @@
 using namespace std;
 
 class AbstractProduct {
-    public:
-        AbstractProduct() = default;
-        virtual ~AbstractProduct() = default;
+public:
+    AbstractProduct() = default;
+    virtual ~AbstractProduct() = default;
 
-        virtual void operate() = 0;
+    virtual void operate() = 0;
 };
 
 class ProductA : public AbstractProduct {
-    public:
-        ProductA() = default;
-        ~ProductA() = default;
+public:
+    ProductA() = default;
+    ~ProductA() = default;
 
-        void operate() {
-            cout << "product A" << endl;
-        }
+    void operate()
+    {
+        cout << "product A" << endl;
+    }
 };
 
 class ProductB : public AbstractProduct {
-    public:
-        ProductB() = default;
-        ~ProductB() = default;
+public:
+    ProductB() = default;
+    ~ProductB() = default;
 
-        void operate() {
-            cout << "product B" << endl;
-        }
+    void operate()
+    {
+        cout << "product B" << endl;
+    }
 };
 
 class AbstractFactory {
-    public:
-        virtual ~AbstractFactory() = default;
-        virtual AbstractProduct *getProduct() = 0;
+public:
+    virtual ~AbstractFactory() = default;
+    virtual AbstractProduct *getProduct() = 0;
 };
 
 class ProductAFactory : public AbstractFactory {

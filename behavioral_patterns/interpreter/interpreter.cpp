@@ -48,7 +48,7 @@ public:
 class NonTerminalExpression : public AbstractExpression {
 public:
     NonTerminalExpression(AbstractExpression *e)
-            : m_expression(e)
+        : m_expression(e)
     {
     }
     void Interpret(Context *context)

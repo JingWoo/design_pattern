@@ -3,10 +3,10 @@
 using namespace std;
 
 class Implementor {
-    public:
-        Implementor() = default;
-        virtual ~Implementor() = default;
-        virtual void operation() = 0;
+public:
+    Implementor() = default;
+    virtual ~Implementor() = default;
+    virtual void operation() = 0;
 };
 
 class ConcreteImplementorA : public Implementor {
@@ -14,7 +14,8 @@ public:
     ConcreteImplementorA() = default;
     virtual ~ConcreteImplementorA() = default;
 
-    void operation() override {
+    void operation() override
+    {
         std::cout << "ConcreteImplementorA" << std::endl;
     }
 };
@@ -24,7 +25,8 @@ public:
     ConcreteImplementorB() = default;
     virtual ~ConcreteImplementorB() = default;
 
-    void operation() override {
+    void operation() override
+    {
         std::cout << "ConcreteImplementorB" << std::endl;
     }
 };
@@ -34,10 +36,12 @@ public:
     Abstraction() = default;
     virtual ~Abstraction() = default;
 
-    void setImplementor(Implementor *implementor) {
+    void setImplementor(Implementor *implementor)
+    {
         this->m_implementor = implementor;
     }
-    virtual void operation() {
+    virtual void operation()
+    {
         m_implementor->operation();
     }
 
@@ -46,23 +50,25 @@ protected:
 };
 
 class RedfindAbstractionA : public Abstraction {
-    public:
-        RedfindAbstractionA() = default;
-        virtual ~RedfindAbstractionA() = default;
-        void operation() override {
-            std::cout << "RedfindAbstractionA ";
-            m_implementor->operation();
-        }
+public:
+    RedfindAbstractionA() = default;
+    virtual ~RedfindAbstractionA() = default;
+    void operation() override
+    {
+        std::cout << "RedfindAbstractionA ";
+        m_implementor->operation();
+    }
 };
 
 class RedfindAbstractionB : public Abstraction {
-    public:
-        RedfindAbstractionB() = default;
-        virtual ~RedfindAbstractionB() = default;
-        void operation() override {
-            std::cout << "RedfindAbstractionB ";
-            m_implementor->operation();
-        }
+public:
+    RedfindAbstractionB() = default;
+    virtual ~RedfindAbstractionB() = default;
+    void operation() override
+    {
+        std::cout << "RedfindAbstractionB ";
+        m_implementor->operation();
+    }
 };
 
 int main()
@@ -71,7 +77,7 @@ int main()
     Abstraction *abstraction = new RedfindAbstractionA();
     abstraction->setImplementor(implementor);
     abstraction->operation();
-    
+
     delete implementor;
     delete abstraction;
 
@@ -79,15 +85,15 @@ int main()
     abstraction = new RedfindAbstractionB();
     abstraction->setImplementor(implementor);
     abstraction->operation();
-    
+
     delete implementor;
     delete abstraction;
-    
+
     implementor = new ConcreteImplementorA();
     abstraction = new RedfindAbstractionB();
     abstraction->setImplementor(implementor);
     abstraction->operation();
-    
+
     delete implementor;
     delete abstraction;
 

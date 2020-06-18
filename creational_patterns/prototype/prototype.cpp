@@ -15,20 +15,24 @@ public:
 class ConcretePrototype : public Prototype {
 public:
     ConcretePrototype(const char *id) : m_id(strdup(id)) {};
-    virtual ~ConcretePrototype() {
+    virtual ~ConcretePrototype()
+    {
         free(m_id);
         m_id = nullptr;
     }
 
-    void setId(char *id) {
+    void setId(char *id)
+    {
         id = m_id;
     }
 
-    virtual const char *getId() const {
+    virtual const char *getId() const
+    {
         return m_id;
     }
-    
-    virtual Prototype *clone() {
+
+    virtual Prototype *clone()
+    {
         Prototype *p = new ConcretePrototype(m_id);
         p->setId(strdup(m_id));
         return p;

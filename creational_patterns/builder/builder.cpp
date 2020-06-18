@@ -31,7 +31,7 @@ private:
 class AbstractBuilder {
 public:
     AbstractBuilder()
-            : m_house(new House)
+        : m_house(new House)
     {
     }
     virtual ~AbstractBuilder()
@@ -54,7 +54,7 @@ protected:
 class ConcreteBuilderA : public AbstractBuilder {
 public:
     ConcreteBuilderA()
-            : AbstractBuilder()
+        : AbstractBuilder()
     {
     }
     ~ConcreteBuilderA() = default;
@@ -78,7 +78,7 @@ public:
 class ConcreteBuilderB : public AbstractBuilder {
 public:
     ConcreteBuilderB()
-            : AbstractBuilder()
+        : AbstractBuilder()
     {
     }
     ~ConcreteBuilderB() = default;

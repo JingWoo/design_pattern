@@ -18,8 +18,8 @@ public:
 class Colleague {
 public:
     Colleague(Mediator *m, ColleagueType type)
-            : m_mediator(m)
-            , m_type(type)
+        : m_mediator(m)
+        , m_type(type)
     {
         m_mediator->RegisterColleague(this);
     }
@@ -40,7 +40,7 @@ protected:
 class ConcreateColleagueA : public Colleague {
 public:
     ConcreateColleagueA(Mediator *m)
-            : Colleague(m, ColleagueType::TYPE_A)
+        : Colleague(m, ColleagueType::TYPE_A)
     {
     }
     virtual ~ConcreateColleagueA() = default;
@@ -58,7 +58,7 @@ public:
 class ConcreateColleagueB : public Colleague {
 public:
     ConcreateColleagueB(Mediator *m)
-            : Colleague(m, ColleagueType::TYPE_B)
+        : Colleague(m, ColleagueType::TYPE_B)
     {
     }
     virtual ~ConcreateColleagueB() = default;
@@ -85,7 +85,8 @@ public:
         }
     }
 
-    void Send(const std::string &msg, Colleague *colleague) override {
+    void Send(const std::string &msg, Colleague *colleague) override
+    {
         if (colleague->GetType() == ColleagueType::TYPE_A) {
             for (auto itor = m_colleagueBs.begin(); itor != m_colleagueBs.end(); ++itor) {
                 (*itor)->Receive(msg);

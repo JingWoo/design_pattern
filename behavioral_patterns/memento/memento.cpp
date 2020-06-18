@@ -16,7 +16,7 @@ public:
 class ConcreteMemento : public Memento {
 public:
     ConcreteMemento(const std::string &state)
-            : m_state(state)
+        : m_state(state)
     {
         std::time_t now = std::time(0);
         this->m_date = std::ctime(&now);
@@ -45,7 +45,7 @@ private:
 class Originator {
 public:
     Originator(const std::string &state)
-            : m_state(state)
+        : m_state(state)
     {
         std::cout << "Originator: Initial state is " << m_state << std::endl;
     }
@@ -90,7 +90,7 @@ private:
 class Caretaker {
 public:
     Caretaker(Originator *originator)
-            : m_originator(originator)
+        : m_originator(originator)
     {
     }
     void Backup()
