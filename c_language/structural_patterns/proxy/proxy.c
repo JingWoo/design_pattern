@@ -45,7 +45,7 @@ void proxy_display(void *image)
 {
     struct proxy_image *proxy_image = (struct proxy_image *)image;
     struct real_image *real_image = real_image_init(proxy_image->file_name);
-    
+
     printf("proxy display image file: %s\n", proxy_image->file_name);
     real_image->interface.display(real_image);
     free(real_image->file_name);

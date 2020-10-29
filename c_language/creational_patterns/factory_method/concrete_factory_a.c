@@ -7,9 +7,9 @@ static AbstractProduct *ConcreteFactoryAOptCreate(AbstractFactory *factory)
 {
     printf("ConcreteFactoryACreate\n");
     ConcreteProductA *pa = (ConcreteProductA *)calloc(1, sizeof(ConcreteProductA));
-	ConcreteProductAInit(pa);
+    ConcreteProductAInit(pa);
     factory->pProduct = pa;
-	return &pa->product;
+    return &pa->product;
 }
 
 static void ConcreteFactoryADestroy(ConcreteFactoryA **factory)

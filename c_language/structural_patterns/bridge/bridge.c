@@ -15,11 +15,13 @@ struct green_shape {
     struct color_impl common;
 };
 
-static void draw_red_shape(char *type) {
+static void draw_red_shape(char *type)
+{
     printf("draw a red %s\n", type);
 }
 
-static void draw_green_shape(char *type) {
+static void draw_green_shape(char *type)
+{
     printf("draw a green %s\n", type);
 }
 
@@ -27,7 +29,7 @@ struct color_impl *red_shape_init()
 {
     struct red_shape *rs = (struct red_shape *)calloc(1, sizeof(struct red_shape));
     assert(rs != NULL);
-    rs->common.draw = draw_red_shape; 
+    rs->common.draw = draw_red_shape;
 
     return (struct color_impl *)rs;
 }
@@ -36,7 +38,7 @@ struct color_impl *green_shape_init()
 {
     struct green_shape *gs = (struct green_shape *)calloc(1, sizeof(struct green_shape));
     assert(gs != NULL);
-    gs->common.draw = draw_green_shape; 
+    gs->common.draw = draw_green_shape;
 
     return (struct color_impl *)gs;
 }
@@ -54,11 +56,13 @@ struct circle {
     struct shape super;
 };
 
-static void draw_square(struct shape *this) {
+static void draw_square(struct shape *this)
+{
     this->impl->draw("square");
 }
 
-static void draw_circle(struct shape *this) {
+static void draw_circle(struct shape *this)
+{
     this->impl->draw("circle");
 }
 

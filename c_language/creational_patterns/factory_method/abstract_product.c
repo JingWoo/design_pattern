@@ -22,7 +22,7 @@ static AbstractProductOpt opts = {
 
 void AbstractProductInit(AbstractProduct *product)
 {
-   (void)memset((void *)product, 0, sizeof(*product)); 
-   product->pOpt = &opts;
+    (void)memset((void *)product, 0, sizeof(*product));
+    product->pOpt = &opts;
 }
 

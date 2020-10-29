@@ -40,7 +40,7 @@ static struct module module_a = {
     .clone = module_clone,
     .show = show,
     .destroy = destroy,
-};
+    };
 
 int main()
 {

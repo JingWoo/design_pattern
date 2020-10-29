@@ -19,6 +19,6 @@ static AbstractFactoryOpt opts = {
 
 void AbstractFactoryInit(AbstractFactory *factory)
 {
-   (void)memset((void *)factory, 0, sizeof(*factory)); 
-   factory->pOpt = &opts;
+    (void)memset((void *)factory, 0, sizeof(*factory));
+    factory->pOpt = &opts;
 }

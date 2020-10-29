@@ -59,8 +59,8 @@ static struct stragery *operation_mut_init()
 }
 
 struct context {
-   struct stragery *s;
-   int (*execute_stratery)(struct context *ctx, int num1, int num2);
+    struct stragery *s;
+    int (*execute_stratery)(struct context *ctx, int num1, int num2);
 };
 
 static int context_execute(struct context *ctx, int num1, int num2)

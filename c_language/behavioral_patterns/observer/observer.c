@@ -43,7 +43,7 @@ static void notify_all_observers(struct subject *subject)
     }
 }
 
-static void attach(struct subject *subject, struct observer *observer) 
+static void attach(struct subject *subject, struct observer *observer)
 {
     static int observer_num = 0;
 

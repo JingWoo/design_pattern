@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 
-// product definition and realization 
+// product definition and realization
 typedef struct product {
     int part_a;
     int part_b;
@@ -34,7 +34,7 @@ void show_product(struct product *p)
     printf("part a: %d, part_b: %d, part_c: %d\n", p->part_a, p->part_b, p->part_c);
 }
 
-// abstract builder definition and realization 
+// abstract builder definition and realization
 typedef struct builder {
     struct product *m_product;
     void (*create_product)(struct builder *b);
@@ -134,7 +134,7 @@ struct builder *concrete_builder_y_init()
 struct director {
     struct builder *m_builder;
     void (*set_builder)(struct director *d, struct builder *b);
-    struct product *(*construct)(struct director *d);
+    struct product *(* construct)(struct director *d);
 };
 
 void set_builder(struct director *d, struct builder *b)
@@ -142,7 +142,7 @@ void set_builder(struct director *d, struct builder *b)
     d->m_builder = b;
 }
 
-struct product *construct(struct director *d)
+struct product * construct(struct director *d)
 {
     d->m_builder->create_product(d->m_builder);
 

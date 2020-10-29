@@ -25,5 +25,5 @@ int main()
     product = AbstructFactoryCreate(&factoryB->factory);
     AbstractProductOperate(product);
     // AbstractProductDestroy(&product);
-    
+
 }

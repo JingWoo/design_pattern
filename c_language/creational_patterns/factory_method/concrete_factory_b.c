@@ -7,9 +7,9 @@ static AbstractProduct *ConcreteFactoryBCreate(AbstractFactory *factory)
 {
     printf("ConcreteFactoryBCreate\n");
     ConcreteProductB *pb = (ConcreteProductB *)calloc(1, sizeof(ConcreteProductB));
-	ConcreteProductBInit(pb);
+    ConcreteProductBInit(pb);
     factory->pProduct = pb;
-	return &pb->product;
+    return &pb->product;
 }
 
 static AbstractFactoryOpt opts = {
