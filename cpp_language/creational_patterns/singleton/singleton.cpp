@@ -43,6 +43,16 @@ Singleton *Singleton::getInstance() noexcept
     return instance;
 }
 
+/*Singleton* Singleton::getInstance()
+{
+	static std::once_flag flag;
+	std::call_once(flag, []
+	{
+		instance = new Singleton;
+	});
+	return instance;
+}*/
+
 void Singleton::recordResource(const std::string &msg)
 {
     m_resource.push_back(msg);
